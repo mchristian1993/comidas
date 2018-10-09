@@ -1,0 +1,17 @@
+<mat-card class="example-card" *ngIf="comida" >
+          <mat-card-content>
+              <h2>Detalle para: {{comida.name | uppercase}}</h2>
+            <p>
+              Nombre:
+              <input [(ngModel)]="comida.name" placeholder="name"/>
+            </p>
+            <p>
+              Valor:
+              <input [(ngModel)]="comida.value" placeholder="value"/>
+            </p>
+            <p>
+              Adicional: {{comida.additional}}
+              <input [(ngModel)]="comida.additional" placeholder="additional"/>
+            </p>
+          </mat-card-content>
+        </mat-card>

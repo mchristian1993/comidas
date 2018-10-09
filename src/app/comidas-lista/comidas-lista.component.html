@@ -1,0 +1,57 @@
+<table>
+  <tr>
+    <td>
+      <div *ngFor="let comida of comidas"
+
+           [class.selected]="comida === selectedComida"
+           (click)="onSelect(comida)">
+        <mat-card class="example-card" *ngIf="comida.id % 2 == 0">
+          <img mat-card-image class="image"
+               src={{comida.image}}>
+          <mat-card-content>
+            <p>
+              Nombre:{{comida.name}}
+            </p>
+            <p>
+              Valor: {{comida.value}}
+            </p>
+            <p>
+              Adicional: {{comida.additional}}
+            </p>
+          </mat-card-content>
+        </mat-card>
+        <br>
+
+      </div>
+
+    </td>
+
+    <td>
+      <div *ngFor="let comida of comidas"
+           [class.selected]="comida === selectedComida"
+           (click)="onSelect(comida)">
+        <mat-card class="example-card" *ngIf="comida.id % 2 != 0">
+          <img mat-card-image class="image"
+               src={{comida.image}}>
+          <mat-card-content>
+            <p>
+              Nombre:{{comida.name}}
+            </p>
+            <p>
+              Valor: {{comida.value}}
+            </p>
+            <p>
+              Adicional: {{comida.additional}}
+            </p>
+          </mat-card-content>
+        </mat-card>
+        <br>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<app-comidas-detalle [comida]="selectedComida"></app-comidas-detalle>
+
+
+
